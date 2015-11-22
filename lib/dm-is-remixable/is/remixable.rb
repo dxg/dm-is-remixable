@@ -373,7 +373,7 @@ module DataMapper
 
             # Port over any other validation contexts to this model.  Skip the
             # default context since it has already been included above.
-            remixable.validators.contexts.each do |context, validators|
+            remixable.validators.rule_sets.each do |context, validators|
               next if context == :default
               model.validators.contexts[context] = validators
             end
